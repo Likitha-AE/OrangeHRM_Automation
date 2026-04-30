@@ -62,16 +62,18 @@ public class BaseClass {
 	}
 	
 	@AfterMethod(alwaysRun = true)
-	public void logOut()
+	public void logOut() throws InterruptedException
 	{
 		HomePage hp = new HomePage(driver);
-		//hp.signOut(driver);
+		Thread.sleep(3000);
+		hp.signOut(driver);
 		System.out.println("Logged out From Appln");
 	}
 	
 	@AfterClass(alwaysRun = true)
-	public void closingBrowser()
+	public void closingBrowser() throws InterruptedException
 	{
+		Thread.sleep(3000);
 		driver.quit();
 		System.out.println("Browser closed");
 	}

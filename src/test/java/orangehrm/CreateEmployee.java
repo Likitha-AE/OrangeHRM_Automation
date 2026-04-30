@@ -19,5 +19,6 @@ public class CreateEmployee extends BaseClass {
 		PimPage pp=new PimPage(driver);
 		pp.addemployee();
 		pp.createEmployee(driver, "test", "script", "data", "test script data", "test@123", "test@123");
+		System.out.println("Employee got created");
 	}
 }

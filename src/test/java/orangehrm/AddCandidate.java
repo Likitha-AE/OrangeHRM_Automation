@@ -14,6 +14,7 @@ public class AddCandidate extends BaseClass {
 		hp.clickRecruitment();
 		hp.clickRecruitment();
 		CandidatesPage cp=new CandidatesPage(driver);
-		cp.createCandidates("testing", "automation", "task", "test123@gmail.com");	
+		cp.createCandidates(driver,"testing", "automation", "task", "test123@gmail.com");
+		System.out.println("Candidate got added");
 	}
 }

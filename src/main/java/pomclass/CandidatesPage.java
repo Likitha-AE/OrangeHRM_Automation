@@ -5,21 +5,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import generic_utilities.WebDriverUtils;
+
 public class CandidatesPage {
 	
 	@FindBy(xpath = "//a[.='Candidates']")
 	private WebElement candidate;
 	
-	@FindBy(linkText = "//button[contains(.,'Add')]")
+	@FindBy(xpath = "//button[contains(.,'Add')]")
 	private WebElement add;
 	
 	@FindBy(name="firstName")
 	private WebElement fName;
 	
-	@FindBy(xpath = "middleName")
+	@FindBy(name = "middleName")
 	private WebElement mName;
 	
-	@FindBy(xpath = "lastName")
+	@FindBy(name = "lastName")
 	private WebElement lName;
 	
 	@FindBy(xpath = "//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow']")
@@ -75,8 +77,10 @@ public class CandidatesPage {
 	}
 	
 	
-	public void createCandidates(String fn,String mn,String ln,String e) {
+	public void createCandidates(WebDriver d,String fn,String mn,String ln,String e) {
 		candidate.click();
+		WebDriverUtils wLib=new WebDriverUtils();
+		wLib.waituntilelementToBeClickable(d, 10, add);
 		add.click();
 		fName.sendKeys(fn);
 		mName.sendKeys(mn);

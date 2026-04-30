@@ -19,6 +19,7 @@ public class ApplyLeave extends BaseClass {
 		LeavePage lp=new LeavePage(driver);
 		lp.clickApply();
 		lp.applyLeave(driver, 29, 30);
+		System.out.println("Leave is applied");
 	}
 	
 }

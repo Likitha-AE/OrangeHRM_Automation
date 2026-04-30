@@ -47,7 +47,7 @@ public class ListenerImplementaion implements ITestListener {
 			String methodName = result.getMethod().getMethodName();
 			String fileName = methodName+new JavaUtils().sysDateTime();
 
-			String filepath = "C:\\Users\\LikithaHE\\Downloads\\src\\test\\resources\\screenshot"+fileName+".png";
+			String filepath = "C:\\Users\\LikithaHE\\Documents\\src\\test\\resources\\screenshot"+fileName+".png";
 			TakesScreenshot ts=(TakesScreenshot)BaseClass.sdriver;
 			File src = ts.getScreenshotAs(OutputType.FILE);
 			File des = new File(filepath);

@@ -14,5 +14,6 @@ public class CreateJobTiltle extends BaseClass {
 		hp.clickAdmin();
 		JobPage jp=new JobPage(driver);
 		jp.createJobTitle("Test Engineer");
+		System.out.println("Job got created");
 	}
 }
